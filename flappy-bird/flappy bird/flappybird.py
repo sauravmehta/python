@@ -7,26 +7,20 @@ import pygame
 from pygame.locals import *
 
 
-FPS = 60
-ANIMATION_SPEED = 0.18  # pixels per millisecond
-WIN_WIDTH = 284 * 2     # BG image size: 284x512 px; tiled twice
+FPS = 40
+ANIMATION_SPEED = 0.2  # pixels per millisecond
+WIN_WIDTH = 284 * 2     # Background image size: 284x512 px; tiled twice
 WIN_HEIGHT = 512
 
 
 class Bird(pygame.sprite.Sprite):
     """Represents the bird controlled by the player.
 
-    The bird is the 'hero' of this game.  The player can make it climb
-    (ascend quickly), otherwise it sinks (descends more slowly).  It must
-    pass through the space in between pipes (for every pipe passed, one
-    point is scored); if it crashes into a pipe, the game ends.
-
     Attributes:
     x: The bird's X coordinate.
     y: The bird's Y coordinate.
     msec_to_climb: The number of milliseconds left to climb, where a
         complete climb lasts Bird.CLIMB_DURATION milliseconds.
-
     Constants:
     WIDTH: The width, in pixels, of the bird's image.
     HEIGHT: The height, in pixels, of the bird's image.
